@@ -117,6 +117,14 @@ lazy_static::lazy_static! {
         map.insert("hide-remote-printer-settings".to_string(), "Y".to_string());
         //隐藏代理设置选项
         map.insert("hide-proxy-settings".to_string(), "Y".to_string());
+        //隐藏服务设置选项
+        map.insert("hide-server-settings".to_string(), "Y".to_string());
+        //隐藏安全设置选项
+        map.insert("hide-security-settings".to_string(), "Y".to_string());
+        //隐藏网络设置选项
+        map.insert("hide-network-settings".to_string(), "Y".to_string());
+        
+
         RwLock::new(map)
     };
     pub static ref OVERWRITE_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
