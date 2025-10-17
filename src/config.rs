@@ -112,8 +112,18 @@ lazy_static::lazy_static! {
         //隐藏连接管理窗口，approve-mode=password，verification-method=use-permanent-password，才可生效，项目中有修复代码
         map.insert("allow-hide-cm".to_string(), "Y".to_string());
         //隐藏托盘图标，approve-mode=password，verification-method=use-permanent-password，才可生效，项目中有修复代码
-
-        
+        map.insert("direct-server".to_string(), "Y".to_string());
+        //允许 IP 直接访问
+        map.insert("direct-access-port".to_string(), "21118".to_string());
+        //IP 直接访问监听端口
+        map.insert("show-virtual-mouse".to_string(), "N".to_string());
+        //禁止显示虚拟鼠标
+        map.insert("image_quality".to_string(), "custom".to_string());
+        //默认图像质量为自定义
+        map.insert("custom_image_quality".to_string(), "50".to_string());
+        //默认码率为50%
+        map.insert("custom-fps".to_string(), "120".to_string());
+        //默认帧率为120
 
         RwLock::new(map)
     };
