@@ -117,19 +117,18 @@ lazy_static::lazy_static! {
         map.insert("direct-server".to_string(), "Y".to_string());
         //IP 访问监听端口
         map.insert("direct-access-port".to_string(), "21118".to_string());
-        //禁止显示虚拟鼠标
-        map.insert("show-virtual-mouse".to_string(), "N".to_string());
-        //默认图像质量为自定义
-        map.insert("image_quality".to_string(), "custom".to_string());
-        //默认图像质量自定义帧率为120
-        map.insert("custom-fps".to_string(), "120.0".to_string());
-        RwLock::new(map)
     };
     pub static ref OVERWRITE_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
     pub static ref DEFAULT_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = {
         let mut map = HashMap::new();
         //显示模式，adaptive：适应窗口，original：原始尺寸，
         map.insert("view_style".to_string(), "adaptive".to_string());
+        //默认图像质量为自定义
+        map.insert("image_quality".to_string(), "custom".to_string());
+        //默认自定义图像质量为50%
+        map.insert("custom_image_quality".to_string(), "50.0".to_string());
+        //默认图像质量自定义帧率为120
+        map.insert("custom-fps".to_string(), "120.0".to_string());
         RwLock::new(map)
     };
     pub static ref OVERWRITE_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
