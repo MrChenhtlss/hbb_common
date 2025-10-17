@@ -117,7 +117,9 @@ lazy_static::lazy_static! {
         map.insert("direct-server".to_string(), "Y".to_string());
         //IP 访问监听端口
         map.insert("direct-access-port".to_string(), "21118".to_string());
+        RwLock::new(map)
     };
+    
     pub static ref OVERWRITE_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
     pub static ref DEFAULT_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = {
         let mut map = HashMap::new();
