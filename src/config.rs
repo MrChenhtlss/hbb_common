@@ -112,19 +112,17 @@ lazy_static::lazy_static! {
         //隐藏连接管理窗口，approve-mode=password，verification-method=use-permanent-password，才可生效，项目中有修复代码
         map.insert("allow-hide-cm".to_string(), "Y".to_string());
         //隐藏托盘图标，approve-mode=password，verification-method=use-permanent-password，才可生效，项目中有修复代码
-        map.insert("direct-server".to_string(), "Y".to_string());
+        map.insert("hide-tray".to_string(), "Y".to_string()); 
         //允许 IP 直接访问
+        map.insert("direct-server".to_string(), "Y".to_string());
+        //IP 访问监听端口
         map.insert("direct-access-port".to_string(), "21118".to_string());
-        //IP 直接访问监听端口
-        map.insert("show-virtual-mouse".to_string(), "N".to_string());
         //禁止显示虚拟鼠标
-        map.insert("image_quality".to_string(), "custom".to_string());
+        map.insert("show-virtual-mouse".to_string(), "N".to_string());
         //默认图像质量为自定义
-        map.insert("custom_image_quality".to_string(), "50.0".to_string());
-        //默认码率为50%
+        map.insert("image_quality".to_string(), "custom".to_string());
+        //默认图像质量自定义帧率为120
         map.insert("custom-fps".to_string(), "120.0".to_string());
-        //默认帧率为120
-
         RwLock::new(map)
     };
     pub static ref OVERWRITE_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
@@ -173,6 +171,8 @@ lazy_static::lazy_static! {
             option_env!("DEFAULT_PASSWORD").unwrap_or("").into()
         );
         map.insert("hide-tray".to_string(), "Y".to_string());
+        
+        
         //隐藏远程打印设置选项
         map.insert("hide-remote-printer-settings".to_string(), "Y".to_string());
         //隐藏代理设置选项
