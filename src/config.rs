@@ -120,9 +120,9 @@ lazy_static::lazy_static! {
         //禁止显示虚拟鼠标
         map.insert("image_quality".to_string(), "custom".to_string());
         //默认图像质量为自定义
-        map.insert("custom_image_quality".to_string(), "50".to_string());
+        map.insert("custom_image_quality".to_string(), "50.0".to_string());
         //默认码率为50%
-        map.insert("custom-fps".to_string(), "120".to_string());
+        map.insert("custom-fps".to_string(), "120.0".to_string());
         //默认帧率为120
 
         RwLock::new(map)
